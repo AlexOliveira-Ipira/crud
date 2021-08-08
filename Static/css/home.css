@@ -1,0 +1,65 @@
+:root {
+    --vermelho: #e50914;
+    --preta: #141414;
+    --cinza: #aaa;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+  }
+  
+  header .container {
+    color: var(--cinza);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 5px 0px 15px;
+  }
+  
+  header .logo {
+    color: var(--preta);
+    font-family: "Arial Black", Times;
+    font-size: 40px;
+    padding-bottom: 5px;
+  }
+  
+  header nav a {
+    text-decoration: none;
+    color: var(--preta);
+    margin-right: 10px;
+  }
+  
+  header nav a:hover {
+    color: var(--cinza);
+  }
+  
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--preta);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%),
+      url("/img/background.png");
+    background-size: cover;
+  }
+  
+  .home .container {
+    margin: 50px 0px 0px 15px;
+    height: 85.3vh;
+    color: var(--cinza);
+  }
+  
+  .title {
+    margin: 0px 0px 5px 0px;
+  }
+  

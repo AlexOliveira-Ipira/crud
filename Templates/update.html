@@ -1,0 +1,28 @@
+{%extends 'base.html' %}
+
+
+{%block content %}  
+
+<link
+rel="stylesheet"
+type="text/css"
+href="/static/css/cad.css"
+media="screen"
+/>
+<h1>
+    {% if usuario.usuario %}
+</h1>
+        <form action=""  method="POST">      
+            <label><Usuario/label>  
+            <p><label>Usuario: <b>{{usuario.usuario}}</b> </label> </p>
+            <br>  
+            <label>Nome</label>
+            <input type="text"name="nome" method="post" placeholder="Alterar nome" id="nome" value={{usuario.nome}} >
+            <label>Email</label>
+            <input type="email"name="email" placeholder="Alterar email" id="email" value={{usuario.email}} >
+            <button type="submit">Update</button>   
+        </form>
+    {%else%}
+        <h1> Usuario nào cadastrado</h1>
+    {%endif%}
+{%endblock%}

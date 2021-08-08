@@ -1,0 +1,39 @@
+{%extends 'base.html' %}
+
+{%block content %} 
+
+
+<link
+rel="stylesheet"
+type="text/css"
+href="/static/css/cad.css"
+media="screen"
+/>
+    <h1> Lista de Cadastros</h1>
+   
+<table>
+        <tr>
+            <p><th>ID</th>
+            <p><th>Usuario</th></p>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Ação</th>
+
+        </tr>
+    {% for iten in dados%}  
+        <tr>
+            <td>{{iten.id}}</td>
+            <td>{{iten.usuario}}</td>
+            <td>{{iten.nome}}</td>
+            <td>{{iten.email}}</td>
+
+            <td>
+                <a href="/update/{{iten.usuario}}" > Editar</a>
+                <a href="/delete/{{iten.usuario}}"> Deletar</a>
+
+            </td>
+        </tr>
+    {%endfor%} 
+</table>
+        
+{%endblock%}

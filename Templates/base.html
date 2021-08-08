@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/static/css/home.css" />
+    <title>Página Inicial</title>
+  </head>
+<body>
+    <header>
+      <div class="container">
+        <h2 class="logo">Nome do sistema</h2>
+        <nav>a
+          <a href="{{url_for('home')}}">
+            <i class="fas fa-home"> Home</i>
+          </a>
+          <a href="{{url_for('cad')}}">
+            <i class="fas fa-address-card"> Cadastro</i>
+          </a>
+          <a href="{{url_for('view')}}">
+            <i class="fas fa-eye"> View</i>
+          </a>
+          <a href="">
+            <i class="fas fa-sign-in-alt"> Login</i>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <script
+    src="https://kit.fontawesome.com/bbfbd7f536.js"
+    crossorigin="anonymous"
+    ></script>
+</body>
+
+  {%block content %} 
+ 
+  <main>
+      <div class="home">
+          <div class="container">
+              <h3 class="title">Bem Vindo!</h3>
+          <p class="subtitle">
+              Sistema para exemplificar a construção de um Cadastro de Usuário
+          </p>
+          </div>
+      </div>
+  </main>
+{%endblock%}
+</html>
