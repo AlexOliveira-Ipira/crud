@@ -1,0 +1,178 @@
+:root {
+    --cinza: #aaa;
+    --azulEscuro: #3c567c;
+    --azulClaro: #4e7aaf;
+    --cinza: rgb(214, 209, 209);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+  }
+  
+  header .container {
+    color: var(--cinza);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 5px 0px 15px;
+  }
+  
+  header .logo {
+    color: var(--azulEscuro);
+    font-size: 40px;
+    padding-bottom: 5px;
+  }
+  header .logoPng {
+    height: 50px;
+    margin-left: 3%;
+  }
+  
+  header nav a {
+    text-decoration: none;
+    color: var(--azulClaro);
+    margin-right: 10px;
+  }
+  
+  header nav a:hover {
+    color: var(--cinza);
+  }
+  
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%),
+      url('/img/background.png');
+    background-size: cover;
+  }
+  
+  .home .container {
+    margin: 50px 0px 0px 15px;
+    height: 85.3vh;
+    color: var(--cinza);
+  }
+  
+  .title {
+    margin: 0px 0px 5px 0px;
+  }
+
+
+
+
+  .main {
+    height: 90vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%),
+      url('/img/background.png');
+    background-size: cover;
+  }
+
+  .foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+  }
+  
+  .cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--azulClaro);
+    margin: 10px;
+    border-radius: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    width: fit-content;
+    height: fit-content;
+  }
+  
+  .icone {
+    margin: 5px;
+  }
+  
+  .info {
+    margin-right: 10px;
+  }
+  
+  .name {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .sobrenome {
+    margin-left: 10px;
+  }
+  
+  .contato {
+    margin-top: 5px;
+  }
+  
+  .endereco {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 5px;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 0px 10px;
+  }
+  
+  .cidade {
+    margin-top: 5px;
+  }
+  
+  .complemento {
+    margin-top: 5px;
+  }
+  
+  .login {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+  }
+  
+  .senha {
+    margin-left: 10px;
+  }
+  

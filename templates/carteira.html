@@ -1,0 +1,44 @@
+{%extends 'base.html' %}
+
+{%block content %} 
+
+
+<table>
+    
+    <tr>
+        <th>{{nomeuser}}</th>
+    </tr>
+
+    <tr>
+        <th>Tiket</th>
+        <th>Quantidade</th>
+        <th>Valor</th>
+    </tr>
+
+    {%for iten in dadoscar%}
+    <tr>
+        <td>
+           {{iten.tickt}}
+           {{iten.quantidade}}
+           {{iten.valor}} 
+        </td>
+    </tr>
+    {%endfor%}
+</table>
+
+        <form action=""  method="POST"> 
+            <label>Ticket</label>
+            <input type="text"name="tickt"  id="tikt" >
+            <br>
+            <label>Quantidade</label>
+            <input type="text"name="qtd"  id="qtd"  >
+            <br>
+            <label>Valor</label>
+            <input type="text"name="valor"  id="valor"  >
+            <br>
+            <button type="submit">Gravar</button>  
+        </form>  
+       
+
+
+{%endblock%}

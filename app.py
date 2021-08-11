@@ -1,11 +1,13 @@
-from flask import Flask , request, jsonify, json
-from flask import redirect, render_template, session, url_for,flash
+from flask import Flask , request
+from flask import redirect, render_template, session, url_for
 from datetime import datetime
-from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy 
+from sqlalchemy.schema import ForeignKey
 
 
 
-app = Flask(__name__)
+
+app = Flask(__name__, template_folder='templates')
 app.secret_key = 'docker'
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///base.sqlite"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -15,7 +17,7 @@ db = SQLAlchemy(app)
 
 
 class Users(db.Model):
-    id = db.Column('id', db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     usuario = db.Column(db.String(80), nullable = False)
     nome = db.Column(db.String(120), nullable = False)
     email = db.Column(db.String(120), unique = True , nullable = False)
@@ -33,7 +35,20 @@ class Users(db.Model):
         self.confemail = confemail
         self.senha = senha
         self.confsenha = confsenha
-        
+
+class Carteira(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    id_usuario = db.Column(db.Integer, ForeignKey('users.id')) 
+    tickt = db.Column(db.String(10), nullable = False)
+    quantidade = db.Column(db.Integer, nullable = False)
+    valor = db.Column(db.Integer, nullable = False)
+
+    def __init__(self, id_usuario, tickt, quantidade, valor):
+        self.id_usuario = id_usuario
+        self.tickt = tickt
+        self.quantidade = quantidade
+        self.valor = valor
+
 
 
 @app.route('/')
@@ -53,8 +68,6 @@ def cad():
         senha = request.values.get('senha')
         confsenha = request.values.get('confsenha')
     
-      
-
         newuser = Users(usuario, name, email, confemail, senha, confsenha)
         db.session.add(newuser)
         db.session.commit()
@@ -99,6 +112,26 @@ def delete(usuario):
     db.session.commit()
     dadoscad = Users.query.limit(5).all()
     return render_template('view.html', dados=dadoscad)
+   
+
+@app.route('/carteira/<usuario>', methods=['GET','POST'])
+def carteira(usuario):
+    userticket = Users.query.filter_by(usuario=usuario).first()
+    nomeuser = userticket.nome
+    if request.method == "POST":
+        id_usuario = userticket.id
+        tickt = request.values.get('tickt')
+        quantidade = request.values.get('qtd')
+        valor = request.values.get('valor')
+
+        newticket = Carteira(id_usuario, tickt, quantidade, valor)       
+        db.session.add(newticket)
+        db.session.commit()
+        dadoscar = Carteira.query.all()
+        return render_template('carteira.html',
+        dadoscar = dadoscar,
+        nomeuser = nomeuser)
+    return  render_template('carteira.html', nomeuser = nomeuser)
    
 
    

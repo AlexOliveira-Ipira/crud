@@ -2,7 +2,6 @@
 
 {%block content %} 
 
-
 <link
 rel="stylesheet"
 type="text/css"
@@ -13,8 +12,8 @@ media="screen"
    
 <table>
         <tr>
-            <p><th>ID</th>
-            <p><th>Usuario</th></p>
+            <th>ID</th>
+            <th>Usuario</th>
             <th>Nome</th>
             <th>E-mail</th>
             <th>Ação</th>
@@ -30,6 +29,7 @@ media="screen"
             <td>
                 <a href="/update/{{iten.usuario}}" > Editar</a>
                 <a href="/delete/{{iten.usuario}}"> Deletar</a>
+                <a href="/carteira/{{iten.usuario}}"> Carteira</a>
 
             </td>
         </tr>
@@ -37,3 +37,7 @@ media="screen"
 </table>
         
 {%endblock%}
+
+
+
+
