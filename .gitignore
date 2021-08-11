@@ -50,6 +50,7 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+.pyenv.cfg 
 
 # Translations
 *.mo
@@ -60,8 +61,8 @@ coverage.xml
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-base.sqlite3
-base.sqlite
+.base.sqlite3
+.base.sqlite
 
 # Flask stuff:
 instance/
@@ -129,3 +130,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
